@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import os, json, csv, traceback, argparse, ujson
+import os, json, csv, traceback, argparse
 from util import util
 from collections import Counter
 from flask import Flask, render_template, request, jsonify, json, url_for, flash, redirect
@@ -68,6 +68,6 @@ if __name__ == '__main__':
     parser.add_argument('--tweets_json_file', default='emoji_tweets_small.json')
     args = parser.parse_args()
     print "loading all tweets"
-    all_tweets = ujson.load(open(args.tweets_json_file))
+    all_tweets = json.load(open(args.tweets_json_file))
     print "done loading all tweets"
     app.run(host='127.0.0.1', debug=True)  # listen on localhost only (for local testing)
