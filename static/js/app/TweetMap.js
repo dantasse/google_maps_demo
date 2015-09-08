@@ -56,8 +56,7 @@ define(['maplabel'], function () {
             drawLine(40.2417, lng, 40.6417, lng);
         }
 
-        // Plots a prediction along with a number. (right now the number is the
-        // number of tweets in that bin I guess)
+        // Plots a prediction along with a number.
         var plotPrediction = function(prediction, num_tweets, which) {
             var lat = prediction[0];
             var lon = prediction[1];
