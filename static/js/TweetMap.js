@@ -153,5 +153,7 @@ var tweetMap = new TweetMap($("#map-canvas"));
 // The $ is jquery's selector. $("#foo") means "get the element with id=foo"
 // and click() is a jquery function that means "on click, do this function."
 $("#go-btn").click(function() {
-  alert("hello! edit this function to make it do what you want!");
+  var lat = parseFloat($("#lat-input").val());
+  var lon = parseFloat($("#lon-input").val());
+  alert("hello! lat = " + lat + " and lon = " + lon);
 });
