@@ -14,7 +14,7 @@
                     <input id="lat-input" type="text" class="form-control" placeholder="lat" onkeyup="if(event.keyCode == 13){$('#go-btn').click();}">
                     <input id="lon-input" type="text" class="form-control" placeholder="lon" onkeyup="if(event.keyCode == 13){$('#go-btn').click();}">
                     <span class="input-group-btn">
-                        <input id="go-btn" class="btn btn-default" type="submit"></input>
+                        <input id="go-btn" class="btn btn-default" type="button" value="Go!"></input>
                     </span>
                 </div>
             </div>
@@ -37,5 +37,10 @@ https://developers.google.com/maps/documentation/javascript/tutorial#api_key
 <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="static/js/TweetMap.js"></script>
+<!-- Note that the order in which we add stuff matters! If b.js depends on
+something in a.js, you have to include a.js before b.js. So if you reorder
+these imports, something might break. This is a weakness of javascript, and the
+reason that require.js was developed. But if you just keep everything in order,
+it should work. -->
 
 {% endblock body %}

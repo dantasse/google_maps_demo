@@ -13,7 +13,9 @@ function TweetMap(canvas) {
         zoom: 14,
         disableDefaultUI: true
     };
-    var map = new google.maps.Map(canvas, mapOptions);
+    // Have to use canvas[0] instead of canvas b/c of jQuery quirks.
+    // $("#foo") returns a 1-length array of items with id=foo.
+    var map = new google.maps.Map(canvas[0], mapOptions);
 
     var drawLine = function(lat1, lng1, lat2, lng2) {
        var line1Coordinates = [
@@ -143,4 +145,13 @@ function TweetMap(canvas) {
     };
     return api;
 };
-var tweetMap = new TweetMap(document.getElementById('map-canvas'), document.getElementById("data-panel"));
+
+// Now you have to actually make a TweetMap.
+var tweetMap = new TweetMap($("#map-canvas"));
+
+// Now let's wire stuff up so the button does something when you press it.
+// The $ is jquery's selector. $("#foo") means "get the element with id=foo"
+// and click() is a jquery function that means "on click, do this function."
+$("#go-btn").click(function() {
+  alert("hello! edit this function to make it do what you want!");
+});
